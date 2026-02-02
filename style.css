@@ -46,3 +46,6 @@ button {
 button:hover {
     background-color: #166fe5;
 }
+.counter2{
+    padding-left: 8px;
+}
