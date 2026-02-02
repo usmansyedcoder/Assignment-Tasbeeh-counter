@@ -9,7 +9,9 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f0f2f5;
 }
-
+.counter2{
+    margin-left: 10px;
+}
 .container {
     display: flex;
     flex-direction: column;
@@ -46,6 +48,4 @@ button {
 button:hover {
     background-color: #166fe5;
 }
-.counter2{
-    padding-left: 8px;
-}
+
