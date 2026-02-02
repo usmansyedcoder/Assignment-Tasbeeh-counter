@@ -1,51 +1,110 @@
-/* Reset default browser styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", system-ui, sans-serif;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: yellow;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
 }
-.counter2{
-    margin-left: 10px;
-}
+
+/* Main Card */
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(14px);
+  padding: 35px 30px;
+  border-radius: 20px;
+  width: 320px;
+  text-align: center;
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.35);
+  animation: fadeIn 0.6s ease-in-out;
 }
 
-h1 {
-    margin-bottom: 20px;
+/* Title */
+.container h1 {
+  font-size: 26px;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+  color: #e8f5e9;
 }
 
+/* Counter Area */
 .counter {
-    display: flex;
-    align-items: center;
-    padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+/* Count Display */
 #count {
-    font-size: 36px;
-    margin-right: 20px;
+  font-size: 72px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #a5d6a7;
+  text-shadow: 0 0 12px rgba(165, 214, 167, 0.4);
 }
 
-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    background-color: #1877f2;
-    color: #fff;
+/* Buttons */
+.counter button {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 12px;
+  border: none;
+  border-radius: 14px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
 }
 
-button:hover {
-    background-color: #166fe5;
+/* Increment Button */
+.counter button:not(.counter2) {
+  background: linear-gradient(135deg, #43a047, #66bb6a);
+  color: #ffffff;
 }
 
+.counter button:not(.counter2):hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(76, 175, 80, 0.4);
+}
+
+/* Reset Button */
+.counter2 {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffcccb;
+}
+
+.counter2:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(0.98);
+}
+
+/* Smooth Entrance */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Friendly */
+@media (max-width: 400px) {
+  .container {
+    width: 90%;
+    padding: 30px 20px;
+  }
+
+  #count {
+    font-size: 60px;
+  }
+}
